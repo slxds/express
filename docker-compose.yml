@@ -6,8 +6,6 @@ services:
     networks:
       - "tenant_network"
     command: yarn start
-    ports:
-      - "3000:3000"
     environment:
       DATABASE_URL: postgres://todoapp@postgres/todos
 networks:
