@@ -2,13 +2,14 @@ version: "3.9"
 services:
   web:
     build: .
-    container_name: "app1_${TENANT}"
+    container_name: "app1_${COMPOSE_PROJECT_NAME}"
     networks:
       - "tenant_network"
     command: yarn start
     environment:
       DATABASE_URL: postgres://todoapp@postgres/todos
+      TENANT: "${COMPOSE_PROJECT_NAME}"
 networks:
   tenant_network:
     external:
-      name: "network_${TENANT}"
+      name: "network_${COMPOSE_PROJECT_NAME}"

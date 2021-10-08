@@ -1,4 +1,4 @@
-require("dotenv").config();
+//require("dotenv").config();
 const express = require("express");
 const app = express();
 
@@ -10,9 +10,9 @@ app.get("/", (req, res) => {
 
 app.get("/:id", (req, res) => {
   let { id } = req.params;
-  res.send(`TEnant ${TENANT}: ID: ${id}`);
+  res.send(`Tenant ${TENANT}: ID: ${id}`);
 });
 
 app.listen(3000, () => {
-  console.log("listening");
+  console.log("listening, tenant: ", TENANT);
 });
