@@ -13,6 +13,11 @@ app.get("/:id", (req, res) => {
   res.send(`Tenant ${TENANT}: ID: ${id}`);
 });
 
+app.get("/todo/:id", (req, res) => {
+  let { id } = req.params;
+  res.send(`Tenant ${TENANT}: todo ID: ${id}`);
+});
+
 app.listen(3000, () => {
   console.log("listening, tenant: ", TENANT);
 });
